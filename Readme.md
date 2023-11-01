@@ -10,4 +10,5 @@ Goals:
     - Rebasing and appending to rewrite history to get rid of unnecessary commits.
 
 
+- Added branch-protection for main-branch. Trying to push to main now...
 
