@@ -14,3 +14,6 @@ Goals:
 - Pushing bypassed the protection... Turns out admins can bypass 
     branch protection rules if it has not been explicitly forbidden.
 
+- Removed stupid updates.
+- Jotain hyödillistä taas.
+
