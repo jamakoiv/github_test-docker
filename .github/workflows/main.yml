@@ -1,0 +1,18 @@
+name: github_test-docker automated testing
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4  # Retrieves code from repo.
+      
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+          architecture: 'x64'
+      - name: Display Python Version
+        run: python -c "import sys; print(sys.version)"
