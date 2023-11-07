@@ -4,8 +4,13 @@ import unittest
 import datetime
 # from unittest import mock
 
-from TimeHasher import TimeHasher
-
+# Clumsy way of making import from root-dir and src-dir to work.
+try:
+    from src.TimeHasher import TimeHasher
+    # print("A")
+except ModuleNotFoundError:
+    from TimeHasher import TimeHasher
+    # print("B")
 
 class TestTimeHasher(unittest.TestCase):
 
@@ -30,4 +35,5 @@ class TestTimeHasher(unittest.TestCase):
 
 
 if __name__ == "__main__":
+    print("Running test on branch: docker")
     unittest.main()
