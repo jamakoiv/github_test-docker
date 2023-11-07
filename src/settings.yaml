@@ -6,4 +6,4 @@
 ---
 hash_algorithm: "sha1"
 string_encoding: "utf-8"
-sleep_time: 5.0   # In seconds.
+sleep_time: 3.0   # In seconds.

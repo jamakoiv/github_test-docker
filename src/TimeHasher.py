@@ -13,20 +13,25 @@ class TimeHasher():
     hash_algorithms = {'sha1': sha1,
                        'md5': md5}
 
-    def __init__(self, settings) -> None:
+    def __init__(self, settings: dict) -> None:
         self.settings = settings
 
-        self.hasher = self.hash_algorithms[self.settings['hash_algorithm']]()
+    def __init_settings__(self, settings: dict) -> None:
+        pass
 
-    def HashNow(self) -> str:
-        date_str = "{:%Y-%m-%dT%H:%M:%S}".format(datetime.now())
+    def HashDatetime(self, d: datetime) -> str:
+        date_str = "{:%Y-%m-%dT%H:%M:%S}".format(d)
         input = date_str.encode(self.settings['string_encoding'])
 
         logging.debug("Creating {}-hash of input {}".format(
                 self.settings['hash_algorithm'],
                 date_str))
 
+        # Since repeated update()-calls sums the input data together,
+        # we need to create new hasher every time we run the function.
+        self.hasher = self.hash_algorithms[self.settings['hash_algorithm']]()
         self.hasher.update(input)
+
         return self.hasher.hexdigest()
 
     def Sleep(self) -> None:

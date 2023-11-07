@@ -1,0 +1,28 @@
+name: github_test-docker automated testing
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4  # Retrieves code from repo.
+      
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+          architecture: 'x64'
+          # cache: 'pip'  # Cache dependencies installed via pip.
+
+      - name: Display Python Version
+        run: python -c "import sys; print(sys.version)"
+
+      - name: Install Python dependancies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r .github/workflows/requirements.txt
+
+      - name: Test TimeHasher-library
+        run: python -m unittest src/testing/TimeHasher_test.py
