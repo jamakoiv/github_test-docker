@@ -25,4 +25,4 @@ jobs:
           pip install -r .github/workflows/requirements.txt
 
       - name: Test TimeHasher-library
-        run: python -m unittest testing/TimeHasher_test.py
+        run: python -m unittest src/testing/TimeHasher_test.py
