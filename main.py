@@ -3,9 +3,17 @@
 import yaml
 import logging
 import datetime
+import argparse
 
 from DockerExiter import ExitGracefully
 from TimeHasher import TimeHasher
+
+parser = argparse.ArgumentParser(
+    prog="Testing program.",
+    description="Periodically gets the hash of current datetime.")
+parser.add_argument('-v', '--verbose', action='store_true')
+
+args = parser.parse_args()
 
 
 def init_logging_file(d: datetime.date) -> dict:
@@ -16,8 +24,9 @@ def init_logging_file(d: datetime.date) -> dict:
                         format="%(asctime)s %(levelname)s:%(message)s")
 
     # Echo logging to stderr.
-    logger = logging.getLogger()
-    logger.addHandler(logging.StreamHandler())
+    if args.verbose:
+        logger = logging.getLogger()
+        logger.addHandler(logging.StreamHandler())
 
 
 if __name__ == "__main__":
@@ -31,6 +40,6 @@ if __name__ == "__main__":
     h = TimeHasher(settings)
 
     while prog.running:
-        res = h.HashNow()
+        res = h.HashDatetime(datetime.datetime.now())
         logging.info(res)
         h.Sleep()

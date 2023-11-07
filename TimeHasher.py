@@ -37,10 +37,6 @@ class TimeHasher():
     def Sleep(self) -> None:
         time.sleep(self.settings['sleep_time'])
 
-    def Run(self) -> None:
-        self.HashNow(datetime.now())
-        self.Sleep()
-
 
 if __name__ == "__main__":
     pass
