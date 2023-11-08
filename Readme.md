@@ -15,5 +15,4 @@ Goals:
     branch protection rules if it has not been explicitly forbidden.
 
 - Removed stupid updates.
-- Jotain hyödillistä taas.
-
+- Added workflow for running stuff when pushing to main. Should happen only when merging via pull-request.
