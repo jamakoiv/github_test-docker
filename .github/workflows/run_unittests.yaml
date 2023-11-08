@@ -1,6 +1,10 @@
 name: github_test-docker automated testing
 
-on: [push]
+on: 
+    # Execute when pushing to any branch expect main.
+    push:
+        branches-ignore: 
+            - main
 
 jobs:
   build:
