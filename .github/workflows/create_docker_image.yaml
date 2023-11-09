@@ -43,7 +43,7 @@ jobs:
        uses: 'google-github-actions/setup-gcloud@v1'
        with:
          version: '>= 363.0.0'
-         project_id: 'testi-projekti-398717'
+         project_id: 'github-actions-temp'
    
      - name: 'Check google cloud cli works.'
        run: 'gcloud info'
