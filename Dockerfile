@@ -11,4 +11,4 @@ COPY src /src
 WORKDIR /src
 
 ENV PYTHONUNBUFFERED=x
-CMD ["python3",  "main.py"]
+CMD ["python3", "main.py", "-v"]
