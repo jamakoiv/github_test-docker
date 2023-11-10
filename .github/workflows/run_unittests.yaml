@@ -30,3 +30,6 @@ jobs:
 
       - name: Test TimeHasher-library
         run: python -m unittest src/testing/TimeHasher_test.py
+
+      - name: Test DockerExiter-library
+        run: python -m unittest src/testing/DockerExiter_test.py
