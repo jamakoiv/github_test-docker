@@ -2,7 +2,6 @@ import unittest
 import subprocess
 import time
 
-
 # NOTE: This is not strictly an unit-test. Behaviour depends on the
 #       child process to react in time for creation and termination,
 #       therefore we need the clumsy time.sleep calls for waiting.
@@ -24,8 +23,8 @@ class TestExitGracefully(unittest.TestCase):
 #        self.assertNotEqual(proc.poll(), None)
 
     def test_exit_sigterm(self):
-        cmd = "python src/testing/DockerExiter_testhelper.py"
-        proc = subprocess.Popen(cmd)
+        args = ["python", "src/testing/DockerExiter_testhelper.py"]
+        proc = subprocess.Popen(args)
 
         # Check subprocess is running.
         time.sleep(self.wait_for_process)
