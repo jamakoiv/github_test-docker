@@ -2,14 +2,10 @@
 
 import unittest
 import datetime
+import sys
+sys.path.append("src")
 
-# Clumsy way of making import from root-dir and src-dir to work.
-try:
-    from src.TimeHasher import TimeHasher
-    # print("A")
-except ModuleNotFoundError:
-    from TimeHasher import TimeHasher
-    # print("B")
+from TimeHasher import TimeHasher
 
 class TestTimeHasher(unittest.TestCase):
 
