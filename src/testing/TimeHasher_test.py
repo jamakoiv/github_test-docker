@@ -2,7 +2,6 @@
 
 import unittest
 import datetime
-# from unittest import mock
 
 # Clumsy way of making import from root-dir and src-dir to work.
 try:
