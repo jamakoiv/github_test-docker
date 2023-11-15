@@ -1,6 +1,11 @@
 
 Project for learning more advanced Git/Github.
 
+Usage:
+    Start locally with: 'python main.py'
+    Start in docker with: 
+        'docker run -d --name <name> --volume timehasher_log:/src/log timehasher:latest'
+
 Goals:
     - protecting main-branch.
     - CD/CI automated testing.
@@ -19,3 +24,4 @@ Goals:
 - Learned squashing small updates to one bigger by using git rebase -i HEAD~N
 - Added github workflow for creating docker-image automatically when pushing to main.
 - Added github workflow for sending docker-image to google artifact registery after creation.
+- Changed logging to go to separate log-directory.
