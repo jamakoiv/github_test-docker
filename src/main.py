@@ -4,6 +4,7 @@ import yaml
 import logging
 import datetime
 import argparse
+import os
 
 from DockerExiter import ExitGracefully
 from TimeHasher import TimeHasher
@@ -18,7 +19,11 @@ args = parser.parse_args()
 
 def init_logging_file(d: datetime.date) -> dict:
     f_log = "{:%Y_%m_%d}".format(d)
-    logging.basicConfig(filename=f"log_{f_log}.log",
+    path = "log" + os.path.sep
+    if not os.path.exists(path):
+        os.makedirs(path)
+
+    logging.basicConfig(filename=f"{path}/{f_log}.log",
                         encoding='utf-8',
                         level=logging.INFO,
                         format="%(asctime)s %(levelname)s:%(message)s")
