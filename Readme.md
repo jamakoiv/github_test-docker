@@ -16,3 +16,6 @@ Goals:
 
 - Removed stupid updates.
 - Added workflow for running stuff when pushing to main. Should happen only when merging via pull-request.
+- Learned squashing small updates to one bigger by using git rebase -i HEAD~N
+- Added github workflow for creating docker-image automatically when pushing to main.
+- Added github workflow for sending docker-image to google artifact registery after creation.
